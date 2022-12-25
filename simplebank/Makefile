@@ -31,4 +31,7 @@ server:
 mock:
 	mockgen -package mockdb -destination ./db/mock/store.go github.com/redsubmarine/simplebank/db/sqlc Store
 
-.PHONY: postgres createdb dropdb migrateup migratedown migrateup1 migratedown1 sqlc test server mock
+clean:
+	go clean -cache
+
+.PHONY: postgres createdb dropdb migrateup migratedown migrateup1 migratedown1 sqlc test server mock clean
