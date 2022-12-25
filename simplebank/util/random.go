@@ -46,5 +46,4 @@ func RandomCurrency() string {
 	currencies := []string{USD, EUR, CAD, KRW}
 	n := len(currencies)
 	return currencies[rand.Intn(n)]
-
 }
