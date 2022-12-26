@@ -7,9 +7,10 @@ import (
 	"github.com/google/uuid"
 )
 
+// Different types of error returned by the VerifyToken function
 var (
+	ErrInvalidToken = errors.New("token is invalid")
 	ErrExpiredToken = errors.New("token has expired")
-	ErrInvalidToken = errors.New("token has invalid")
 )
 
 // Payload contains the payload data of the token
