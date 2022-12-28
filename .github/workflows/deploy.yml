@@ -13,7 +13,6 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v2
-        working-directory: ${{ env.working-directory }}
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
@@ -34,4 +33,3 @@ jobs:
         run: |
           docker build -t $REGISTRY/$REPOSITORY:$IMAGE_TAG .
           docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG    
-        working-directory: ${{ env.working-directory }}
