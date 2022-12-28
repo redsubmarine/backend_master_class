@@ -9,8 +9,6 @@ jobs:
   build:
     name: Build image
     runs-on: ubuntu-latest
-    env:
-      working-directory: simplebank
 
     steps:
       - name: Check out code
