@@ -1,7 +1,4 @@
-# This workflow will build a golang project
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-go
-
-name: ci-test
+name: Run unit tests
 
 on:
   push:
@@ -10,6 +7,7 @@ on:
     branches: [ "main" ]
 
 jobs:
+
   test:
     name: Test
     runs-on: ubuntu-latest
@@ -18,7 +16,7 @@ jobs:
 
     services:
       postgres:
-        image: postgres:12
+        image: postgres:12-alpine
         env:
           POSTGRES_USER: root
           POSTGRES_PASSWORD: secret
