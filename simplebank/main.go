@@ -32,6 +32,8 @@ func main() {
 		log.Fatal("cannot connect to db: ", err)
 	}
 
+	// run db migration
+
 	store := db.NewStore(conn)
 	go runGatewayServer(config, store)
 	runGrpcServer(config, store)
