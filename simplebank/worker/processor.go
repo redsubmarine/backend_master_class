@@ -7,6 +7,11 @@ import (
 	db "github.com/redsubmarine/simplebank/db/sqlc"
 )
 
+const (
+	QueueCritical = "critical"
+	QueueDefault  = "default"
+)
+
 type TaskProcessor interface {
 	Start() error
 	ProcessorTaskSendVerifyEmail(ctx context.Context, task *asynq.Task) error
@@ -20,7 +25,12 @@ type RedisTaskProcessor struct {
 func NewRedisTaskProcessor(redisOpt asynq.RedisClientOpt, store db.Store) TaskProcessor {
 	server := asynq.NewServer(
 		redisOpt,
-		asynq.Config{},
+		asynq.Config{
+			Queues: map[string]int{
+				QueueCritical: 9,
+				QueueDefault:  6,
+			},
+		},
 	)
 
 	return &RedisTaskProcessor{
