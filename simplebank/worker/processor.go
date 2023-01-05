@@ -27,8 +27,8 @@ func NewRedisTaskProcessor(redisOpt asynq.RedisClientOpt, store db.Store) TaskPr
 		redisOpt,
 		asynq.Config{
 			Queues: map[string]int{
-				QueueCritical: 9,
-				QueueDefault:  6,
+				QueueCritical: 10,
+				QueueDefault:  5,
 			},
 		},
 	)
