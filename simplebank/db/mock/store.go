@@ -81,6 +81,21 @@ func (mr *MockStoreMockRecorder) CreateEntry(arg0, arg1 interface{}) *gomock.Cal
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CreateEntry", reflect.TypeOf((*MockStore)(nil).CreateEntry), arg0, arg1)
 }
 
+// CreateItem mocks base method.
+func (m *MockStore) CreateItem(arg0 context.Context, arg1 string) (db.Item, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "CreateItem", arg0, arg1)
+	ret0, _ := ret[0].(db.Item)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// CreateItem indicates an expected call of CreateItem.
+func (mr *MockStoreMockRecorder) CreateItem(arg0, arg1 interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CreateItem", reflect.TypeOf((*MockStore)(nil).CreateItem), arg0, arg1)
+}
+
 // CreateSession mocks base method.
 func (m *MockStore) CreateSession(arg0 context.Context, arg1 db.CreateSessionParams) (db.Session, error) {
 	m.ctrl.T.Helper()
@@ -273,6 +288,21 @@ func (m *MockStore) ListEntries(arg0 context.Context, arg1 db.ListEntriesParams)
 func (mr *MockStoreMockRecorder) ListEntries(arg0, arg1 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListEntries", reflect.TypeOf((*MockStore)(nil).ListEntries), arg0, arg1)
+}
+
+// ListItems mocks base method.
+func (m *MockStore) ListItems(arg0 context.Context, arg1 db.ListItemsParams) ([]db.Item, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "ListItems", arg0, arg1)
+	ret0, _ := ret[0].([]db.Item)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// ListItems indicates an expected call of ListItems.
+func (mr *MockStoreMockRecorder) ListItems(arg0, arg1 interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListItems", reflect.TypeOf((*MockStore)(nil).ListItems), arg0, arg1)
 }
 
 // ListTransfers mocks base method.

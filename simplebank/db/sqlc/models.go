@@ -26,6 +26,11 @@ type Entry struct {
 	CreatedAt time.Time `json:"created_at"`
 }
 
+type Item struct {
+	ID   int32  `json:"id"`
+	Name string `json:"name"`
+}
+
 type Session struct {
 	ID           uuid.UUID `json:"id"`
 	Username     string    `json:"username"`

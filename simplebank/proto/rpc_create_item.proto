@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package pb;
+
+import "item.proto";
+
+option go_package = "github.com/redsubmarine/simplebank/pb";
+
+message CreateItemRequest {
+    string name = 1;
+}
+
+message CreateItemResponse {
+    Item item = 1;
+}

@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package pb;
+
+import "item.proto";
+
+option go_package = "github.com/redsubmarine/simplebank/pb";
+
+message ListItemRequest {
+    optional int32 limit = 1;
+    optional int32 id = 2;
+}
+
+message ListItemResponse { 
+    repeated Item list = 1; 
+}
